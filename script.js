@@ -407,6 +407,19 @@ Price: R.O ${item.price.toFixed(3)}
     });
 
     const finalTotal = subtotal + shippingCost;
+    sendEmails(
+    firstName,
+    lastName,
+    phone,
+    email,
+    city,
+    address,
+    notes,
+    payment,
+    subtotal,
+    shippingCost,
+    finalTotal
+);
 
     message += `\nSubtotal: R.O ${subtotal.toFixed(3)}\n`;
     message += `Shipping: R.O ${shippingCost.toFixed(3)}\n`;
@@ -492,5 +505,79 @@ function updateShipping(){
 
     document.getElementById("checkoutTotal").innerHTML =
         "R.O " + total.toFixed(3);
+
+}
+async function sendEmails(
+    firstName,
+    lastName,
+    phone,
+    email,
+    city,
+    address,
+    notes,
+    payment,
+    subtotal,
+    shippingCost,
+    finalTotal
+){
+
+    const products = cart.map(item =>
+        `${item.name}
+Size: ${item.size || "-"}
+Qty: ${item.quantity}
+Price: R.O ${item.price.toFixed(3)}`
+    ).join("\n\n");
+
+    const orderId = "LS" + Date.now();
+
+    const params = {
+
+        customer_name: firstName + " " + lastName,
+
+        name: firstName + " " + lastName,
+
+        phone: phone,
+
+        email: email,
+
+        city: city,
+
+        address: address,
+
+        notes: notes,
+
+        payment: payment,
+
+        products: products,
+
+        quantity: cart.length,
+
+        total: finalTotal.toFixed(3),
+
+        order_id: orderId
+
+    };
+
+    try{
+
+        await emailjs.send(
+            "service_flr88lm",
+            "template_y3a94ys",
+            params
+        );
+
+        await emailjs.send(
+            "service_flr88lm",
+            "template_bgebrc8",
+            params
+        );
+
+        console.log("Emails Sent");
+
+    }catch(error){
+
+        console.error(error);
+
+    }
 
 }
