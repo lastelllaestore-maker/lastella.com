@@ -350,7 +350,7 @@ function placeOrder() {
 // SEND ORDER TO WHATSAPP
 // ==========================================
 
-function sendWhatsAppOrder(
+async function sendWhatsAppOrder(
     firstName,
     lastName,
     phone,
@@ -406,23 +406,35 @@ Price: R.O ${item.price.toFixed(3)}
 
     });
 
-    const finalTotal = subtotal + shippingCost;
-    sendEmails(
-    firstName,
-    lastName,
-    phone,
-    email,
-    city,
-    address,
-    notes,
-    payment,
-    subtotal,
-    shippingCost,
-    finalTotal
-);
+ const finalTotal = subtotal + shippingCost;
 
-    message += `\nSubtotal: R.O ${subtotal.toFixed(3)}\n`;
-    message += `Shipping: R.O ${shippingCost.toFixed(3)}\n`;
+try {
+
+    await sendEmails(
+        firstName,
+        lastName,
+        phone,
+        email,
+        city,
+        address,
+        notes,
+        payment,
+        subtotal,
+        shippingCost,
+        finalTotal
+    );
+
+    console.log("Emails sent successfully");
+
+} catch (error) {
+
+    console.error(error);
+    alert("Email sending failed!");
+
+}
+
+message += `\nSubtotal: R.O ${subtotal.toFixed(3)}\n`;
+   message += `Shipping: R.O ${shippingCost.toFixed(3)}\n`;
     message += `💰 TOTAL: R.O ${finalTotal.toFixed(3)}\n`;
 
     if(notes !== ""){
@@ -521,62 +533,65 @@ async function sendEmails(
     finalTotal
 ){
 
-    const products = cart.map(item =>
-        `${item.name}
-Size: ${item.size || "-"}
-Qty: ${item.quantity}
-Price: R.O ${item.price.toFixed(3)}`
-    ).join("\n\n");
-
-    const orderId = "LS" + Date.now();
-
-    const params = {
-
-        customer_name: firstName + " " + lastName,
-
-        name: firstName + " " + lastName,
-
-        phone: phone,
-
-        email: email,
-
-        city: city,
-
-        address: address,
-
-        notes: notes,
-
-        payment: payment,
-
-        products: products,
-
-        quantity: cart.length,
-
-        total: finalTotal.toFixed(3),
-
-        order_id: orderId
-
-    };
-
     try{
 
-        await emailjs.send(
-            "service_flr88lm",
-            "template_y3a94ys",
-            params
+        const response = await fetch(
+            "https://lastella-order-api.lastelllaestore.workers.dev/",
+            {
+                method:"POST",
+
+                headers:{
+                    "Content-Type":"application/json"
+                },
+
+                body:JSON.stringify({
+
+                    customer_name:firstName+" "+lastName,
+
+                    email,
+
+                    phone,
+
+                    city,
+
+                    address,
+
+                    payment,
+
+                    subtotal:subtotal.toFixed(3),
+
+                    shipping:shippingCost.toFixed(3),
+
+                    total:finalTotal.toFixed(3),
+
+                    products:cart
+
+                })
+
+            }
         );
 
-        await emailjs.send(
-            "service_flr88lm",
-            "template_bgebrc8",
-            params
-        );
+        const result = await response.json();
 
-        console.log("Emails Sent");
+        console.log(result);
+
+        if(result.success){
+
+            alert("✅ Order emails sent successfully!");
+
+        }else{
+
+            alert("Email Error");
+
+            console.log(result);
+
+        }
 
     }catch(error){
 
-        console.error(error);
+        console.log(error);
+
+        alert(error.message);
 
     }
 

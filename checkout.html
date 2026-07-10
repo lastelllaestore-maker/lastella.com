@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,184 +11,253 @@
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<header>
+<header class="checkout-header">
 
 <h1>LASTELLA</h1>
 
-<p>Secure Checkout</p>
+<p>Luxury Jewellery Checkout</p>
 
 </header>
 
 <div class="checkout-page">
 
-    <!-- Billing Details -->
+<!-- LEFT SIDE -->
 
-    <div class="billing-box">
+<div class="billing-box">
 
-        <h2>Billing Details</h2>
+<h2>Billing Details</h2>
 
-        <form id="checkoutForm">
+<form id="checkoutForm">
 
-            <input type="text" id="firstName" placeholder="First Name" required>
+<input
+type="text"
+id="firstName"
+placeholder="First Name"
+required>
 
-            <input type="text" id="lastName" placeholder="Last Name" required>
+<input
+type="text"
+id="lastName"
+placeholder="Last Name"
+required>
 
-            <input type="tel" id="phone" placeholder="Phone Number" required>
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
 
-            <input type="email" id="email" placeholder="Email Address" required>
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required>
 
-            <select id="country">
+<select id="country">
 
-                <option>Oman</option>
-                <option>United Arab Emirates</option>
-                <option>Saudi Arabia</option>
-                <option>Qatar</option>
+<option>Oman</option>
 
-            </select>
+<option>United Arab Emirates</option>
 
-            <input type="text" id="city" placeholder="City" required>
+<option>Saudi Arabia</option>
 
-            <input type="text" id="address" placeholder="Street Address" required>
+<option>Qatar</option>
 
-            <textarea id="notes" placeholder="Order Notes (Optional)"></textarea>
+<option>Kuwait</option>
 
-        </form>
+<option>Bahrain</option>
 
-    </div>
+</select>
 
-    <!-- Order Summary -->
+<input
+type="text"
+id="city"
+placeholder="City"
+required>
 
-    <div class="summary-box">
+<input
+type="text"
+id="address"
+placeholder="Street Address"
+required>
 
-        <h2>Your Order</h2>
+<textarea
+id="notes"
+placeholder="Order Notes (Optional)">
+</textarea>
 
-        <div id="checkout-items">
+</form>
 
-            <!-- Products from cart will appear here -->
+</div>
 
-        </div>
+<!-- RIGHT SIDE -->
 
-        <hr>
+<div class="summary-box">
 
-        <div class="summary-row">
+<h2>Your Order</h2>
 
-            <span>Subtotal</span>
+<div id="checkout-items"></div>
 
-            <span id="checkoutSubtotal">R.O 0.000</span>
-
-        </div>
+<hr>
 
 <div class="summary-row">
 
-    <span>Shipping</span>
+<span>Subtotal</span>
 
-    <select id="shippingType" onchange="updateShipping()">
-
-        <option value="2">Home Delivery (R.O 2.000)</option>
-
-        <option value="1">Office Delivery (R.O 1.000)</option>
-
-    </select>
-
-</div>
-        <div class="summary-row total">
-
-            <strong>Total</strong>
-
-            <strong id="checkoutTotal">R.O 0.000</strong>
-
-        </div>
-
-        <hr>
-
-        <h3>Payment Method</h3>
-
-<label class="payment-option">
-    <input type="radio"
-           name="payment"
-           value="Cash on Delivery"
-           checked
-           onchange="toggleBankDetails()">
-
-    Cash on Delivery
-</label>
-
-<label class="payment-option">
-    <input type="radio"
-           name="payment"
-           value="Bank Transfer"
-           onchange="toggleBankDetails()">
-
-    Bank Transfer
-</label>
-
-<div id="bankDetails" class="bank-details" style="display:none;">
-
-    <h4>Bank Muscat</h4>
-
-    <p><b>Account Name:</b> LASTELLA</p>
-
-    <p><b>Account Number:</b> 123456789</p>
-
-    <p><b>IBAN:</b> OMXXXXXXXXXXXXXXXXXXXX</p>
-
-    <p>Please complete the bank transfer before placing your order.And send me screenshot of payment for Proof</p>
+<span id="checkoutSubtotal">
+R.O 0.000
+</span>
 
 </div>
 
-<button class="checkout-btn" onclick="placeOrder()">
+<div class="summary-row">
+
+<span>Shipping</span>
+
+<select
+id="shippingType"
+onchange="updateShipping()">
+
+<option value="2">
+Home Delivery (R.O 2.000)
+</option>
+
+<option value="1">
+Office Delivery (R.O 1.000)
+</option>
+
+</select>
+
+</div>
+
+<div class="summary-row total">
+
+<strong>Total</strong>
+
+<strong id="checkoutTotal">
+R.O 0.000
+</strong>
+
+</div>
+
+<hr>
+
+<h3>Payment Method</h3>
+
+<label class="payment-option">
+
+<input
+type="radio"
+name="payment"
+value="Cash on Delivery"
+checked
+onchange="toggleBankDetails()">
+
+Cash on Delivery
+
+</label>
+
+<label class="payment-option">
+
+<input
+type="radio"
+name="payment"
+value="Bank Transfer"
+onchange="toggleBankDetails()">
+
+Bank Transfer
+
+</label>
+
+<div
+id="bankDetails"
+class="bank-details"
+style="display:none;">
+
+<h4>Bank Muscat</h4>
+
+<p><b>Account Name:</b> LASTELLA</p>
+
+<p><b>Account Number:</b> 123456789</p>
+
+<p><b>IBAN:</b> OMXXXXXXXXXXXXXXXX</p>
+
+<p>
+
+After payment please send the
+payment screenshot on WhatsApp.
+
+</p>
+
+</div>
+
+<button
+class="checkout-btn"
+onclick="placeOrder()">
 
 Place Order
 
 </button>
-    </div>
 
 </div>
-<div id="confirmPopup" class="popup">
-
-    <div class="popup-box">
-
-        <h2>Confirm Your Order</h2>
-
-        <p id="popupProducts"></p>
-
-        <p id="popupTotal"></p>
-
-        <p id="popupPayment"></p>
-
-        <div class="popup-buttons">
-
-            <button class="cancel-btn"
-            onclick="closePopup()">
-
-            Cancel
-
-            </button>
-
-            <button class="confirm-btn"
-            onclick="confirmOrder()">
-
-            Confirm Order
-
-            </button>
-
-        </div>
-
-    </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-emailjs.init({
-    publicKey: "438k0nMvsl8eGim0C",
-});
-</script>
+<!-- Loading -->
+
+<div id="loadingOverlay" class="loading-overlay">
+
+<div class="loader"></div>
+
+<p>
+
+Processing your order...
+
+</p>
+
+</div>
+
+<!-- Success Popup -->
+
+<div id="successPopup" class="popup">
+
+<div class="popup-box">
+
+<h2>
+
+✅ Order Placed Successfully
+
+</h2>
+
+<p>
+
+Thank you for shopping with LASTELLA.
+
+</p>
+
+<p>
+
+A confirmation email has been sent.
+
+</p>
+
+<button onclick="closeSuccess()">
+
+Continue
+
+</button>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
+
 </body>
+
 </html>
