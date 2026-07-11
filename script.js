@@ -553,6 +553,39 @@ function toggleBankDetails() {
     }
 
 }
+const modal = document.getElementById("imageModal");
+
+const modalImg = document.getElementById("zoomedImage");
+
+document.querySelectorAll(".card img").forEach(img=>{
+
+    img.style.cursor="zoom-in";
+
+    img.onclick=function(){
+
+        modal.style.display="flex";
+
+        modalImg.src=this.src;
+
+    }
+
+});
+
+document.querySelector(".close-image").onclick=function(){
+
+    modal.style.display="none";
+
+}
+
+modal.onclick=function(e){
+
+    if(e.target===modal){
+
+        modal.style.display="none";
+
+    }
+
+}
 // ==========================================
 // UPDATE SHIPPING
 // ==========================================
