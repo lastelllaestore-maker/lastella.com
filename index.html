@@ -9,499 +9,376 @@
 
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LASTELLA | Luxury Jewellery</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
 
 <header>
+
+<div class="logo">
+
 <h1>LASTELLA</h1>
-<p>1 YEAR WARRANTY FOR EACH ITEM</p>
-</header>
+
+<p>Luxury Jewellery Collection</p>
+
+</div>
 
 <nav>
 
-    <a href="index.html">Sets</a>
-    <a href="products.html">Bracelets</a>
-    <a href="ring.html">Ring</a>
-    <a href="contact.html">Contact</a>
+<a href="index.html">Home</a>
 
-    <div class="cart-icon" onclick="toggleCart()">
-        🛒
-        <span id="cart-count">0</span>
-    </div>
+<a href="sets.html">Sets</a>
+
+<a href="products.html">Products</a>
+
+<a href="ring.html">Rings</a>
+
+<a href="bracelet.html">Bracelets</a>
+
+<a href="necklace.html">Necklaces</a>
+
+<a href="earrings.html">Earrings</a>
+
+<a href="contact.html">Contact</a>
 
 </nav>
-<div class="search-box">
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="🔍 Search jewellery..."
-        onkeyup="searchProducts()"
-    >
-</div>
-<h2 class="title">Our Collection</h2>
 
-<section class="products">
+</header>
 
-<div class="card">
-    <img src="images/product1.jpg" alt="Luis Vuiton Set">
+<!-- ================= HERO ================= -->
 
-    <h3>Luis Vuiton Set</h3>
+<section class="hero">
 
-    <h4>R.O 1.100</h4>
+<div class="hero-content">
 
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product1.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product2.jpg" alt="SWAN BLACK SET">
+<h1>
+Luxury Jewellery
+</h1>
 
-    <h3>SWAN BLACK SET</h3>
+<h2>
+Made For Everyday Elegance
+</h2>
 
-    <h4>R.O 1.100</h4>
+<p>
 
-    <button class="cart-btn"
-        onclick="addToCart(
-            'SWAN BLACK SET',
-            1.100,
-            'images/product2.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product3.jpg" alt="Luis Vuiton Set">
+Premium Quality Jewellery
 
-    <h3>Luis Vuiton Set</h3>
+with 1 Year Warranty
 
-    <h4>R.O 1.100</h4>
+</p>
 
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product3.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product4.jpg" alt="Luis Vuiton Set">
+<a href="products.html" class="shop-btn">
 
-    <h3>Luis Vuiton Set</h3>
+Shop Now
 
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product4.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product5.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product5.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product6.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product6.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product7.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product7.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product8.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product1.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product9.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product9.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product10.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product10.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product11.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button
-class="cart-btn"
-onclick="addToCart(
-'Luis Vuitton Set',
-1.100,
-this.parentElement.querySelector('img').src
-)">
-🛒 Add to Cart
-</button>
-</div>
-<div class="card">
-    <img src="images/product13.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product13.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product14.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product14.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product15.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product15.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product16.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product16.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product17.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product17.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product18.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product18.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product19.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product19.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product20.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product20.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product21.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product21.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product22.jpg" alt="Luis Vuiton Set">
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product22.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product23.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product23.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product24.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product24.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product25.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product25.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product26.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product26.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-<div class="card">
-    <img src="images/product27.jpg" alt="Luis Vuiton Set">
-
-    <h3>Luis Vuiton Set</h3>
-
-    <h4>R.O 1.100</h4>
-
-    <button class="cart-btn"
-        onclick="addToCart(
-            'Luis Vuiton Set',
-            1.100,
-            'images/product27.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
-</div>
-</section><!-- SHOPPING CART -->
-
-<div id="cart-sidebar">
-
-    <div class="cart-header">
-
-        <h2>Your Cart</h2>
-
-        <span class="close-cart"
-        onclick="toggleCart()">
-            ✕
-        </span>
-
-    </div>
-
-    <div id="cart-items">
-
-    </div>
-
-    <div class="cart-footer">
-
-        <h3>
-
-            <span>Total</span>
-
-            <span id="cart-total">
-                R.O 0.000
-            </span>
-
-        </h3>
-
-        <button class="checkout-btn" onclick="viewCart()">
-    View Cart
-</button>
-
-<button class="whatsapp-cart" onclick="orderWhatsApp()">
-    Order on WhatsApp
-</button>
-    </div>
+</a>
 
 </div>
+
+</section>
+
+<!-- ================= CATEGORY ================= -->
+
+<section class="category-section">
+
+<h2>
+
+Shop By Category
+
+</h2>
+
+<div class="category-grid">
+
+<a href="ring.html" class="category-card">
+
+💍
+
+<h3>Rings</h3>
+
+</a>
+
+<a href="bracelet.html" class="category-card">
+
+📿
+
+<h3>Bracelets</h3>
+
+</a>
+
+<a href="sets.html" class="category-card">
+
+✨
+
+<h3>Sets</h3>
+
+</a>
+
+<a href="earrings.html" class="category-card">
+
+💎
+
+<h3>Earrings</h3>
+
+</a>
+
+<a href="products.html" class="category-card">
+
+🎁
+
+<h3>Jewellery Sets</h3>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= NEW ARRIVALS ================= -->
+
+<section class="featured">
+
+<h2>
+
+New Arrivals
+
+</h2>
+
+<div class="featured-grid">
+
+<div class="feature-card">
+
+<img src="images/product1.jpg">
+
+<h3>Van Cleef Set</h3>
+
+<p>R.O 1.100</p>
+
+<a href="products.html">
+
+View Product
+
+</a>
+
+</div>
+
+<div class="feature-card">
+
+<img src="images/product500.jpg">
+
+<h3>Cartier Ring</h3>
+
+<p>R.O 1.100</p>
+
+<a href="ring.html">
+
+View Product
+
+</a>
+
+</div>
+
+<div class="feature-card">
+
+<img src="images/product3.jpg">
+
+<h3>LV Set</h3>
+
+<p>R.O 1.100</p>
+
+<a href="products.html">
+
+View Product
+
+</a>
+
+</div>
+
+<div class="feature-card">
+
+<img src="images/product4.jpg">
+
+<h3>Swan Set</h3>
+
+<p>R.O 1.100</p>
+
+<a href="products.html">
+
+View Product
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why">
+
+<h2>
+
+Why Choose LASTELLA?
+
+</h2>
+
+<div class="why-grid">
+
+<div>
+
+<i class="fa-solid fa-gem"></i>
+
+<h3>Premium Quality</h3>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-shield-heart"></i>
+
+<h3>1 Year Warranty</h3>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-droplet"></i>
+
+<h3>Water Resistant</h3>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<h3>Delivery Across Oman</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= INSTAGRAM ================= -->
+
+<section class="instagram">
+
+<h2>
+
+Follow LASTELLA
+
+</h2>
+
+<p>
+
+See our latest jewellery collection on Instagram.
+
+</p>
+
+<a href="#">
+
+Follow Us
+
+</a>
+
+</section>
+
+<!-- ================= WHATSAPP ================= -->
+
+<section class="whatsapp-section">
+
+<h2>
+
+Need Help?
+
+</h2>
+
+<p>
+
+Our team is ready to assist you.
+
+</p>
+
+<a
+href="https://wa.me/96875029949"
+target="_blank">
+
+Chat on WhatsApp
+
+</a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>
+
+LASTELLA
+
+</h2>
+
+<p>
+
+Luxury Jewellery Collection
+
+</p>
+
+<p>
+
+📍 Muscat, Oman
+
+</p>
+
+<p>
+
+📞 +968 75029949
+
+</p>
+
+<p>
+
+✉️ lastelllaestore@gmail.com
+
+</p>
+
+<p>
+
+© 2026 LASTELLA
+
+</p>
+
+</footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
-
-
-

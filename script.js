@@ -228,6 +228,124 @@ function removeItem(index){
     }
 
 }
+/* ===========================================
+        LASTELLA HOMEPAGE SCRIPT
+===========================================*/
+
+
+/* Smooth Scroll */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+    anchor.addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+});
+
+
+/* Fade In Animation */
+
+const observer = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+});
+
+document.querySelectorAll("section").forEach(section=>{
+
+    section.classList.add("hidden");
+
+    observer.observe(section);
+
+});
+
+
+/* Back To Top Button */
+
+const topButton=document.createElement("button");
+
+topButton.innerHTML="↑";
+
+topButton.className="top-btn";
+
+document.body.appendChild(topButton);
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>300){
+
+        topButton.classList.add("show-top");
+
+    }else{
+
+        topButton.classList.remove("show-top");
+
+    }
+
+});
+
+topButton.onclick=function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+};
+
+
+/* Hero Button Animation */
+
+const shopBtn=document.querySelector(".shop-btn");
+
+if(shopBtn){
+
+setInterval(()=>{
+
+shopBtn.classList.toggle("pulse");
+
+},1200);
+
+}
+
+
+/* Product Card Hover */
+
+document.querySelectorAll(".feature-card").forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform="translateY(-10px) scale(1.03)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="translateY(0px) scale(1)";
+
+});
+
+});
 // ==========================================
 // LOAD CHECKOUT
 // ==========================================
