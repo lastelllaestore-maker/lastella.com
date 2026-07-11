@@ -538,15 +538,15 @@ async function sendEmails(
         const response = await fetch(
             "https://lastella-order-api.lastelllaestore.workers.dev/",
             {
-                method:"POST",
+                method: "POST",
 
-                headers:{
-                    "Content-Type":"application/json"
+                headers: {
+                    "Content-Type": "application/json"
                 },
 
-                body:JSON.stringify({
+                body: JSON.stringify({
 
-                    customer_name:firstName+" "+lastName,
+                    customer_name: firstName + " " + lastName,
 
                     email,
 
@@ -558,13 +558,13 @@ async function sendEmails(
 
                     payment,
 
-                    subtotal:subtotal.toFixed(3),
+                    subtotal: subtotal.toFixed(3),
 
-                    shipping:shippingCost.toFixed(3),
+                    shipping: shippingCost.toFixed(3),
 
-                    total:finalTotal.toFixed(3),
+                    total: finalTotal.toFixed(3),
 
-                    products:cart
+                    products: cart
 
                 })
 
@@ -573,25 +573,23 @@ async function sendEmails(
 
         const result = await response.json();
 
-        console.log(result);
+        if(response.ok && result.success){
 
-        if(result.success){
-
-            alert("✅ Order emails sent successfully!");
+            console.log("✅ Owner email sent successfully.");
 
         }else{
 
-            alert("Email Error");
+            console.error(result);
 
-            console.log(result);
+            alert("❌ Failed to send owner email.");
 
         }
 
     }catch(error){
 
-        console.log(error);
+        console.error(error);
 
-        alert(error.message);
+        alert("❌ Network Error. Please try again.");
 
     }
 
