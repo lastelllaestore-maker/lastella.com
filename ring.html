@@ -56,21 +56,31 @@
         🛒 Add to Cart
     </button>
 </div>
-<div class="card">
-    <img src="images/product500.jpg" alt="CARTIER RING(SIZE 5-9)">
+<div class="size-box">
 
-    <h3>CARTIER RING(SIZE 5-9)</h3>
+<p>Select Size</p>
 
-    <h4>R.O 1.900</h4>
+<button onclick="addToCart(
+'Cartier Ring',
+1.100,
+this.parentElement.parentElement.querySelector('img').src,
+'Small'
+)">S</button>
 
-    <button class="cart-btn"
-        onclick="addToCart(
-            'CARTIER RING(SIZE 5-9)',
-            1.100,
-            'images/product500.jpg'
-        )">
-        🛒 Add to Cart
-    </button>
+<button onclick="addToCart(
+'Cartier Ring',
+1.100,
+this.parentElement.parentElement.querySelector('img').src,
+'Medium'
+)">M</button>
+
+<button onclick="addToCart(
+'Cartier Ring',
+1.100,
+this.parentElement.parentElement.querySelector('img').src,
+'Large'
+)">L</button>
+
 </div>
 <div class="card">
     <img src="images/product501.jpg" alt="Luis Vuiton Set">
