@@ -349,6 +349,35 @@ function placeOrder() {
 // ==========================================
 // SEND ORDER TO WHATSAPP
 // ==========================================
+function searchProducts(){
+
+    const input = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+
+        const name = card
+            .querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+        if(name.includes(input)){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+}
 
 async function sendWhatsAppOrder(
     firstName,
