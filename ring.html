@@ -56,30 +56,31 @@
         🛒 Add to Cart
     </button>
 </div>
-<div class="size-box">
+<div class="card">
 
-<p>Select Size</p>
+    <img src="images/product500.jpg" alt="Cartier Ring">
 
-<button onclick="addToCart(
-'Cartier Ring',
-1.100,
-this.parentElement.parentElement.querySelector('img').src,
-'Small'
-)">S</button>
+    <h3>Cartier Ring</h3>
 
-<button onclick="addToCart(
-'Cartier Ring',
-1.100,
-this.parentElement.parentElement.querySelector('img').src,
-'Medium'
-)">M</button>
+    <h4>R.O 1.100</h4>
 
-<button onclick="addToCart(
-'Cartier Ring',
-1.100,
-this.parentElement.parentElement.querySelector('img').src,
-'Large'
-)">L</button>
+    <div class="size-box">
+
+        <p>Select Size</p>
+
+        <button onclick="addToCart('Cartier Ring',1.100,this.parentElement.parentElement.querySelector('img').src,'Small')">
+            S
+        </button>
+
+        <button onclick="addToCart('Cartier Ring',1.100,this.parentElement.parentElement.querySelector('img').src,'Medium')">
+            M
+        </button>
+
+        <button onclick="addToCart('Cartier Ring',1.100,this.parentElement.parentElement.querySelector('img').src,'Large')">
+            L
+        </button>
+
+    </div>
 
 </div>
 <div class="card">
