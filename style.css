@@ -403,6 +403,39 @@ nav a{
 }
 
 }
+/* SEARCH BAR */
+
+.search-box{
+    width:100%;
+    text-align:center;
+    margin:25px 0;
+}
+
+.search-box input{
+
+    width:90%;
+    max-width:500px;
+
+    padding:14px 20px;
+
+    border:2px solid #f3c8d8;
+
+    border-radius:35px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.search-box input:focus{
+
+    border-color:#b76e79;
+
+    box-shadow:0 0 10px rgba(183,110,121,.25);
+
+}
 /* ===========================
    Checkout Products
 =========================== */
