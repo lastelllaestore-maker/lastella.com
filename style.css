@@ -550,6 +550,15 @@ nav a{
     cursor:pointer;
 
 }
+.out-stock{
+
+    background:#999 !important;
+
+    cursor:not-allowed;
+
+    opacity:.8;
+
+}
 /* ===========================
    Ring Size Selector
 =========================== */
