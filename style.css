@@ -481,33 +481,27 @@ nav a{
 }
 
 }
-/* Ring Size Selector */
+/* ===========================
+   Ring Size Selector
+=========================== */
 
 .size-title{
-
-    margin-top:15px;
-
-    margin-bottom:10px;
-
+    text-align:center;
+    margin:15px 0 10px;
+    font-size:15px;
     font-weight:600;
-
     color:#555;
-
 }
 
-.size-selector{
-
-    display:flex;
-
+.card .size-selector{
+    display:flex !important;
     justify-content:center;
-
-    gap:10px;
-
-    margin-bottom:18px;
-
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
 }
 
-.size-selector button{
+.card .size-selector button{
 
     width:42px;
 
@@ -515,33 +509,34 @@ nav a{
 
     border-radius:50%;
 
-    border:2px solid #ddd;
+    border:none;
 
-    background:#fff;
+    background:#f3f3f3;
 
-    cursor:pointer;
+    color:#333;
+
+    font-size:15px;
 
     font-weight:bold;
 
+    cursor:pointer;
+
     transition:.3s;
-
 }
 
-.size-selector button:hover{
-
-    border-color:#d61f6b;
-
-    color:#d61f6b;
-
-}
-
-.size-selector button.active{
+.card .size-selector button:hover{
 
     background:#d61f6b;
 
     color:white;
 
-    border-color:#d61f6b;
+}
+
+.card .size-selector button.active{
+
+    background:#d61f6b;
+
+    color:white;
 
 }
 /* Product Sizes */
