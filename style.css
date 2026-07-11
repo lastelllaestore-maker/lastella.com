@@ -403,37 +403,82 @@ nav a{
 }
 
 }
-/* SEARCH BAR */
+/* =========================
+   LASTELLA SEARCH BAR
+========================= */
 
 .search-box{
+
     width:100%;
-    text-align:center;
-    margin:25px 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:35px auto;
+
 }
 
 .search-box input{
 
-    width:90%;
-    max-width:500px;
+    width:420px;
 
-    padding:14px 20px;
+    max-width:90%;
 
-    border:2px solid #f3c8d8;
+    padding:16px 25px;
 
-    border-radius:35px;
+    border:none;
 
-    font-size:16px;
+    border-radius:50px;
+
+    font-size:17px;
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    color:#444;
+
+    box-shadow:0 8px 25px rgba(214,31,107,.15);
+
+    transition:.35s;
 
     outline:none;
 
-    transition:.3s;
+}
+
+.search-box input::placeholder{
+
+    color:#999;
+
 }
 
 .search-box input:focus{
 
-    border-color:#b76e79;
+    transform:scale(1.03);
 
-    box-shadow:0 0 10px rgba(183,110,121,.25);
+    box-shadow:0 10px 30px rgba(214,31,107,.35);
+
+    border:2px solid #d61f6b;
+
+}
+@media(max-width:768px){
+
+.search-box{
+
+    padding:0 15px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    font-size:16px;
+
+    padding:15px 20px;
+
+}
 
 }
 /* ===========================
