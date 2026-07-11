@@ -378,6 +378,38 @@ function searchProducts(){
     });
 
 }
+function selectSize(button,size){
+
+    const buttons = button.parentElement.querySelectorAll("button");
+
+    buttons.forEach(btn=>btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    button.parentElement.dataset.size = size;
+
+}
+function addRingToCart(button,name,price){
+
+    const card = button.closest(".card");
+
+    const image = card.querySelector("img").src;
+
+    const sizeBox = card.querySelector(".size-selector");
+
+    const size = sizeBox.dataset.size;
+
+    if(!size){
+
+        alert("Please select a ring size.");
+
+        return;
+
+    }
+
+    addToCart(name,price,image,size);
+
+}
 
 async function sendWhatsAppOrder(
     firstName,

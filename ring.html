@@ -64,26 +64,27 @@
 
     <h4>R.O 1.100</h4>
 
-    <div class="size-box">
+    <p class="size-title">Select Ring Size</p>
 
-        <p>Select Size</p>
+    <div class="size-selector">
 
-        <button onclick="addToCart('Cartier Ring',1.100,this.parentElement.parentElement.querySelector('img').src,'Small')">
-            S
-        </button>
+        <button type="button" onclick="selectSize(this,'6')">6</button>
 
-        <button onclick="addToCart('Cartier Ring',1.100,this.parentElement.parentElement.querySelector('img').src,'Medium')">
-            M
-        </button>
+        <button type="button" onclick="selectSize(this,'7')">7</button>
 
-        <button onclick="addToCart('Cartier Ring',1.100,this.parentElement.parentElement.querySelector('img').src,'Large')">
-            L
-        </button>
-         <button class="cart-btn">
-        🛒 Add to Cart
-    </button>
+        <button type="button" onclick="selectSize(this,'8')">8</button>
+
+        <button type="button" onclick="selectSize(this,'9')">9</button>
 
     </div>
+
+    <button
+        class="cart-btn"
+        onclick="addRingToCart(this,'Cartier Ring',1.100)">
+
+        🛒 Add to Cart
+
+    </button>
 
 </div>
 <div class="card">

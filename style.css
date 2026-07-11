@@ -481,6 +481,69 @@ nav a{
 }
 
 }
+/* Ring Size Selector */
+
+.size-title{
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:#555;
+
+}
+
+.size-selector{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+}
+
+.size-selector button{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    border:2px solid #ddd;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.size-selector button:hover{
+
+    border-color:#d61f6b;
+
+    color:#d61f6b;
+
+}
+
+.size-selector button.active{
+
+    background:#d61f6b;
+
+    color:white;
+
+    border-color:#d61f6b;
+
+}
 /* Product Sizes */
 
 .size-box{
