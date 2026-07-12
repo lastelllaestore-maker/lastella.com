@@ -716,17 +716,15 @@ nav a:hover{
 
 .hero{
 
-    height:80vh;
+    width:100%;
 
-    background:url("images/banner.jpg") center/cover;
+    height:650px;
 
-    display:flex;
+    background:url("images/banner.jpg") center center;
 
-    align-items:center;
+    background-size:cover;
 
-    justify-content:center;
-
-    text-align:center;
+    background-repeat:no-repeat;
 
     position:relative;
 
@@ -782,24 +780,32 @@ nav a:hover{
 
 .shop-btn{
 
-    display:inline-block;
+    position:absolute;
 
-    padding:16px 40px;
+    left:180px;
+
+    bottom:70px;
 
     background:#d61f6b;
 
     color:white;
 
-    text-decoration:none;
+    padding:18px 45px;
 
     border-radius:40px;
 
+    text-decoration:none;
+
+    font-size:20px;
+
     font-weight:bold;
 
-    transition:.3s;
+}
+.shop-btn:hover{
+
+    transform:scale(1.05);
 
 }
-
 .shop-btn:hover{
 
     transform:translateY(-5px);

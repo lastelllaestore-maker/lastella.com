@@ -672,39 +672,42 @@ function toggleBankDetails() {
 
 }
 const modal = document.getElementById("imageModal");
-
 const modalImg = document.getElementById("zoomedImage");
+const closeBtn = document.querySelector(".close-image");
 
-document.querySelectorAll(".card img").forEach(img=>{
+if(modal && modalImg && closeBtn){
 
-    img.style.cursor="zoom-in";
+    document.querySelectorAll(".card img").forEach(img=>{
 
-    img.onclick=function(){
+        img.style.cursor="zoom-in";
 
-        modal.style.display="flex";
+        img.onclick=function(){
 
-        modalImg.src=this.src;
+            modal.style.display="flex";
 
-    }
+            modalImg.src=this.src;
 
-});
+        };
 
-document.querySelector(".close-image").onclick=function(){
+    });
 
-    modal.style.display="none";
-
-}
-
-modal.onclick=function(e){
-
-    if(e.target===modal){
+    closeBtn.onclick=function(){
 
         modal.style.display="none";
 
-    }
+    };
+
+    modal.onclick=function(e){
+
+        if(e.target===modal){
+
+            modal.style.display="none";
+
+        }
+
+    };
 
 }
-
 // ==========================================
 // UPDATE SHIPPING
 // ==========================================
