@@ -1096,64 +1096,23 @@ footer p{
 
 /* MOBILE */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.hero{
+    .hero{
 
-    height:70vh;
+        height:320px;
 
-}
+        background-size:contain;
 
-.hero h1{
+        background-repeat:no-repeat;
 
-    font-size:34px;
+        background-position:center top;
 
-}
+        background-color:#fff;
 
-.hero h2{
-
-    font-size:22px;
+    }
 
 }
-
-.hero p{
-
-    font-size:16px;
-
-}
-
-.logo h1{
-
-    font-size:28px;
-
-}
-
-nav{
-
-    gap:10px;
-
-}
-
-nav a{
-
-    font-size:14px;
-
-}
-
-section h2{
-
-    font-size:28px;
-
-}
-
-.feature-card img{
-
-    height:220px;
-
-}
-
-}
-/* Fade Animation */
 
 .hidden{
 
