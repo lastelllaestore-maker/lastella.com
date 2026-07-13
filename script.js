@@ -229,119 +229,171 @@ function removeItem(index){
 
 }
 /* ===========================================
-        LASTELLA HOMEPAGE SCRIPT
+      LASTELLA HOMEPAGE V2
 ===========================================*/
 
 
-/* Smooth Scroll */
+/* Fade Animation */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-
-    anchor.addEventListener("click",function(e){
-
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-
-            behavior:"smooth"
-
-        });
-
-    });
-
-});
-
-
-/* Fade In Animation */
+const sections = document.querySelectorAll(
+".categories,.featured,.why-us,.instagram"
+);
 
 const observer = new IntersectionObserver(entries=>{
 
-    entries.forEach(entry=>{
+entries.forEach(entry=>{
 
-        if(entry.isIntersecting){
+if(entry.isIntersecting){
 
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-});
-
-document.querySelectorAll("section").forEach(section=>{
-
-    section.classList.add("hidden");
-
-    observer.observe(section);
-
-});
-
-
-/* Back To Top Button */
-
-const topButton=document.createElement("button");
-
-topButton.innerHTML="↑";
-
-topButton.className="top-btn";
-
-document.body.appendChild(topButton);
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>300){
-
-        topButton.classList.add("show-top");
-
-    }else{
-
-        topButton.classList.remove("show-top");
-
-    }
-
-});
-
-topButton.onclick=function(){
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-};
-
-
-/* Hero Button Animation */
-
-const shopBtn=document.querySelector(".shop-btn");
-
-if(shopBtn){
-
-setInterval(()=>{
-
-shopBtn.classList.toggle("pulse");
-
-},1200);
+entry.target.classList.add("show");
 
 }
 
+});
 
-/* Product Card Hover */
+});
 
-document.querySelectorAll(".feature-card").forEach(card=>{
+sections.forEach(section=>{
+
+section.classList.add("hidden");
+
+observer.observe(section);
+
+});
+
+
+/* Category Card Hover */
+
+document.querySelectorAll(".category-card").forEach(card=>{
 
 card.addEventListener("mouseenter",()=>{
 
-card.style.transform="translateY(-10px) scale(1.03)";
+card.style.transform="translateY(-12px) scale(1.02)";
 
 });
 
 card.addEventListener("mouseleave",()=>{
 
 card.style.transform="translateY(0px) scale(1)";
+
+});
+
+});
+
+
+/* Search */
+
+function searchProducts(){
+
+const input=document.getElementById("searchInput");
+
+if(!input) return;
+
+const value=input.value.toLowerCase();
+
+const cards=document.querySelectorAll(".category-card");
+
+cards.forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(value) ? "block" : "none";
+
+});
+
+}
+
+
+/* Back To Top */
+
+const topBtn=document.createElement("button");
+
+topBtn.innerHTML="↑";
+
+topBtn.className="top-button";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>350){
+
+topBtn.classList.add("show-top");
+
+}else{
+
+topBtn.classList.remove("show-top");
+
+}
+
+});
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+
+/* Shop Now Animation */
+
+const shop=document.querySelector(".shop-btn");
+
+if(shop){
+
+setInterval(()=>{
+
+shop.classList.toggle("pulse");
+
+},1200);
+
+}
+
+
+/* Sticky Navigation */
+
+const nav=document.querySelector("nav");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>120){
+
+nav.classList.add("sticky");
+
+}else{
+
+nav.classList.remove("sticky");
+
+}
+
+});
+
+
+/* Smooth Scroll */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const target=document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
 
 });
 

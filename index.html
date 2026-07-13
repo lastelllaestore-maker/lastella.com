@@ -1,364 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LASTELLA - Products</title>
-
 <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>LASTELLA | Luxury Jewellery</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-</head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- Announcement Bar -->
+
+<div class="top-bar">
+    ✨ BIG BRAND SMALL PRICE • 🛡️ 1 YEAR WARRANTY • 🚚 DELIVERY ACROSS OMAN
+</div>
+
+<!-- Header -->
 
 <header>
 
-<div class="logo">
+    <div class="logo-area">
 
-<h1>LASTELLA</h1>
+        <img src="images/logo.jpg" alt="LASTELLA Logo" class="logo">
 
-<p>Luxury Jewellery Collection</p>
+        <p>Luxury Jewellery Collection</p>
 
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="sets.html">Sets</a>
-
-<a href="products.html">Products</a>
-
-<a href="ring.html">Rings</a>
-
-<a href="bracelet.html">Bracelets</a>
-
-<a href="necklace.html">Necklaces</a>
-
-<a href="earrings.html">Earrings</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
+    </div>
 
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- Navigation -->
 
-<section class="hero">
+<nav>
 
-<a href="products.html" class="shop-btn">
+    <ul>
 
-Shop Now
+        <li><a href="index.html">Home</a></li>
 
-</a>
+        <li><a href="products.html">Sets</a></li>
 
-</section>
-<!-- ================= CATEGORY ================= -->
+        <li><a href="ring.html">Rings</a></li>
 
-<section class="category-section">
+        <li><a href="bracelet.html">Bracelets</a></li>
 
-<h2>
+        <li><a href="necklace.html">Necklaces</a></li>
 
-Shop By Category
+        <li><a href="earrings.html">Earrings</a></li>
 
-</h2>
+        <li><a href="contact.html">Contact</a></li>
 
-<div class="category-grid">
+    </ul>
 
-<a href="ring.html" class="category-card">
+</nav>
 
-💍
+<!-- Search -->
 
-<h3>Rings</h3>
+<section class="search-section">
 
-</a>
-
-<a href="bracelet.html" class="category-card">
-
-📿
-
-<h3>Bracelets</h3>
-
-</a>
-
-<a href="sets.html" class="category-card">
-
-✨
-
-<h3>Sets</h3>
-
-</a>
-
-<a href="earrings.html" class="category-card">
-
-💎
-
-<h3>Earrings</h3>
-
-</a>
-
-<a href="products.html" class="category-card">
-
-🎁
-
-<h3>Jewellery Sets</h3>
-
-</a>
-
-</div>
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search Jewellery..."
+        onkeyup="searchProducts()"
+    >
 
 </section>
 
-<!-- ================= NEW ARRIVALS ================= -->
+<!-- Categories -->
+
+<section class="categories">
+
+    <h2>Shop By Category</h2>
+
+    <div class="category-grid">
+
+        <a href="ring.html" class="category-card">
+
+            <img src="images/category-ring.jpg" alt="Rings">
+
+            <span>Rings →</span>
+
+        </a>
+
+        <a href="earrings.html" class="category-card">
+
+            <img src="images/category-earring.jpg" alt="Earrings">
+
+            <span>Earrings →</span>
+
+        </a>
+
+        <a href="bracelet.html" class="category-card">
+
+            <img src="images/category-bracelet.jpg" alt="Bracelets">
+
+            <span>Bracelets →</span>
+
+        </a>
+
+        <a href="necklace.html" class="category-card">
+
+            <img src="images/category-necklace.jpg" alt="Necklaces">
+
+            <span>Necklaces →</span>
+
+        </a>
+
+        <a href="products.html" class="category-card">
+
+            <img src="images/category-set.jpg" alt="Sets">
+
+            <span>Sets →</span>
+
+        </a>
+
+        <a href="products.html" class="category-card">
+
+            <img src="images/category-new.jpg" alt="New Arrivals">
+
+            <span>New Arrivals →</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Best Sellers -->
 
 <section class="featured">
 
-<h2>
+    <h2>Best Sellers</h2>
 
-New Arrivals
+    <div class="featured-products">
 
-</h2>
+        <!-- We'll add products in Part 2 -->
 
-<div class="featured-grid">
-
-<div class="feature-card">
-
-<img src="images/product1.jpg">
-
-<h3>Van Cleef Set</h3>
-
-<p>R.O 1.100</p>
-
-<a href="products.html">
-
-View Product
-
-</a>
-
-</div>
-
-<div class="feature-card">
-
-<img src="images/product500.jpg">
-
-<h3>Cartier Ring</h3>
-
-<p>R.O 1.100</p>
-
-<a href="ring.html">
-
-View Product
-
-</a>
-
-</div>
-
-<div class="feature-card">
-
-<img src="images/product3.jpg">
-
-<h3>LV Set</h3>
-
-<p>R.O 1.100</p>
-
-<a href="products.html">
-
-View Product
-
-</a>
-
-</div>
-
-<div class="feature-card">
-
-<img src="images/product4.jpg">
-
-<h3>Swan Set</h3>
-
-<p>R.O 1.100</p>
-
-<a href="products.html">
-
-View Product
-
-</a>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- ================= WHY CHOOSE US ================= -->
+<!-- Why Choose LASTELLA -->
 
-<section class="why">
+<section class="why-us">
 
-<h2>
+    <h2>Why Choose LASTELLA?</h2>
 
-Why Choose LASTELLA?
+    <div class="why-grid">
 
-</h2>
+        <div class="why-card">
 
-<div class="why-grid">
+            🛡️
 
-<div>
+            <h3>1 Year Warranty</h3>
 
-<i class="fa-solid fa-gem"></i>
+        </div>
 
-<h3>Premium Quality</h3>
+        <div class="why-card">
 
-</div>
+            💧
 
-<div>
+            <h3>Water Resistant</h3>
 
-<i class="fa-solid fa-shield-heart"></i>
+        </div>
 
-<h3>1 Year Warranty</h3>
+        <div class="why-card">
 
-</div>
+            💎
 
-<div>
+            <h3>Premium Quality</h3>
 
-<i class="fa-solid fa-droplet"></i>
+        </div>
 
-<h3>Water Resistant</h3>
+        <div class="why-card">
 
-</div>
+            🚚
 
-<div>
+            <h3>Fast Delivery</h3>
 
-<i class="fa-solid fa-truck-fast"></i>
+        </div>
 
-<h3>Delivery Across Oman</h3>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- ================= INSTAGRAM ================= -->
+<!-- Instagram -->
 
 <section class="instagram">
 
-<h2>
+    <h2>Follow LASTELLA</h2>
 
-Follow LASTELLA
-
-</h2>
-
-<p>
-
-See our latest jewellery collection on Instagram.
-
-</p>
-
-<a href="#">
-
-Follow Us
-
-</a>
+    <p>@lastella</p>
 
 </section>
 
-<!-- ================= WHATSAPP ================= -->
-
-<section class="whatsapp-section">
-
-<h2>
-
-Need Help?
-
-</h2>
-
-<p>
-
-Our team is ready to assist you.
-
-</p>
-
-<a
-href="https://wa.me/96875029949"
-target="_blank">
-
-Chat on WhatsApp
-
-</a>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
+<!-- Footer -->
 
 <footer>
 
-<h2>
+    <h3>LASTELLA</h3>
 
-LASTELLA
+    <p>Luxury Jewellery Collection</p>
 
-</h2>
+    <p>📍 Muscat, Oman</p>
 
-<p>
+    <p>📞 +968 75029949</p>
 
-Luxury Jewellery Collection
-
-</p>
-
-<p>
-
-📍 Muscat, Oman
-
-</p>
-
-<p>
-
-📞 +968 75029949
-
-</p>
-
-<p>
-
-✉️ lastelllaestore@gmail.com
-
-</p>
-
-<p>
-
-© 2026 LASTELLA
-
-</p>
+    <p>✉️ lastelllaestore@gmail.com</p>
 
 </footer>
 
 <script src="script.js"></script>
 
 </body>
-
-</html>
-=======
