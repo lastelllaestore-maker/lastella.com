@@ -21,7 +21,20 @@ body{
     color:#333;
     overflow-x:hidden;
 }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+img{
+    max-width:100%;
+    display:block;
+}
+
+body{
+    overflow-x:hidden;
+}
 /* HEADER */
 
 header{
@@ -966,119 +979,160 @@ footer h3{
 
 }
 .hero{
-
-    width:100%;
-
-    height:650px;
-
-    background-image:url("images/logo.jpg");
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    background-size:cover;
-
-    position:relative;
-
+    min-height:650px;
+    height:70vh;
 }
 /* Mobile */
 
-@media(max-width:768px){
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
 
-.logo{
+@media screen and (max-width:768px){
 
-    width:320px;
-
-    max-width:88%;
-
+/* Top Bar */
+.top-bar{
+    font-size:12px;
+    padding:10px;
 }
 
+/* Logo */
 .logo-area{
+    padding:25px 15px;
+}
 
-    padding:30px 15px;
-
+.logo{
+    width:240px;
+    max-width:85%;
 }
 
 .logo-area p{
-
-    font-size:16px;
-
+    font-size:15px;
+    margin-top:10px;
 }
 
+/* Hero */
+.hero{
+    height:260px;
+    background-position:center;
+}
+
+/* Navigation */
 nav ul{
-
-flex-direction:column;
-
-padding:15px;
-
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:10px 0;
 }
 
 nav li{
-
-margin:12px;
-
+    margin:8px 0;
 }
 
-.category-grid{
-
-grid-template-columns:1fr 1fr;
-
-gap:18px;
-
+nav a{
+    font-size:16px;
 }
 
-.category-card img{
-
-    aspect-ratio:1/1;
-
-}
-
-.category-card span{
-
-    font-size:20px;
-
-    padding:14px;
-
-}
-.categories h2{
-
-font-size:34px;
-
-}
-
-.why-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.why-card{
-
-font-size:40px;
-
-padding:25px;
-
-}
-
-.why-card h3{
-
-font-size:16px;
-
-}
+/* Search */
 
 .search-section{
-
-padding:20px;
-
+    padding:20px 15px;
 }
 
 .search-section input{
+    width:100%;
+    font-size:15px;
+    padding:14px 18px;
+    border-radius:30px;
+}
 
-font-size:16px;
+/* Section Headings */
 
-padding:14px 18px;
+.categories,
+.featured,
+.why-us,
+.instagram{
+    padding:45px 18px;
+}
 
+.categories h2,
+.featured h2,
+.why-us h2,
+.instagram h2{
+    font-size:30px;
+    margin-bottom:30px;
+}
+
+/* Categories */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.category-card{
+    border-radius:16px;
+}
+
+.category-card img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+}
+
+.category-card span{
+    font-size:17px;
+    padding:12px;
+}
+
+/* Why Choose */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.why-card{
+    padding:22px 12px;
+    font-size:34px;
+    border-radius:16px;
+}
+
+.why-card h3{
+    font-size:15px;
+    margin-top:12px;
+}
+
+/* Instagram */
+
+.instagram p{
+    font-size:16px;
+}
+
+/* Footer */
+
+footer{
+    padding:40px 20px;
+}
+
+footer h3{
+    font-size:24px;
+}
+
+/* Buttons */
+
+button,
+.btn,
+.shop-btn,
+.whatsapp-btn{
+    width:100%;
+    max-width:320px;
+    margin:auto;
+    display:block;
+    font-size:16px;
+    padding:14px;
 }
 
 }
