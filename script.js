@@ -358,21 +358,22 @@ shop.classList.toggle("pulse");
 
 /* Sticky Navigation */
 
-const nav = document.querySelector("nav");
+const nav=document.querySelector("nav");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-    if (window.scrollY > 120) {
+if(window.scrollY>120){
 
-        nav.classList.add("sticky");
+nav.classList.add("sticky");
 
-    } else {
+}else{
 
-        nav.classList.remove("sticky");
+nav.classList.remove("sticky");
 
-    }
+}
 
 });
+
 
 /* Smooth Scroll */
 
@@ -478,15 +479,16 @@ function placeOrder() {
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
     const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
     const city = document.getElementById("city").value.trim();
     const address = document.getElementById("address").value.trim();
     const notes = document.getElementById("notes").value.trim();
-     
-    const email = "";
+
     if (
         firstName === "" ||
         lastName === "" ||
         phone === "" ||
+        email === "" ||
         city === "" ||
         address === ""
     ) {
@@ -583,6 +585,7 @@ async function sendWhatsAppOrder(
     firstName,
     lastName,
     phone,
+    email,
     city,
     address,
     notes
@@ -610,6 +613,7 @@ async function sendWhatsAppOrder(
 
     message += `👤 Name: ${firstName} ${lastName}\n`;
     message += `📞 Phone: ${phone}\n`;
+    message += `📧 Email: ${email}\n`;
     message += `📍 City: ${city}\n`;
     message += `🏠 Address: ${address}\n`;
     message += `💳 Payment: ${payment}\n`;
