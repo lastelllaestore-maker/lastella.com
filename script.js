@@ -644,7 +644,6 @@ try {
         firstName,
         lastName,
         phone,
-        email,
         city,
         address,
         notes,
