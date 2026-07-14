@@ -1991,3 +1991,39 @@ border-radius:8px;
 cursor:pointer;
 
 }
+.back-container{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.back-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #d81b60;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 44px; /* Better for touch */
+    transition: 0.3s;
+}
+
+.back-btn:hover{
+    background: #c2185b;
+}
+
+@media (max-width: 768px){
+    .back-container{
+        padding: 12px;
+    }
+
+    .back-btn{
+        font-size: 15px;
+        padding: 10px 18px;
+    }
+}
