@@ -5,26 +5,23 @@
 
 // Load cart from browser storage
 // Always start with an empty cart
-// Load cart
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+localStorage.removeItem("cart");
+let cart = [];
 
-// Check if this is a completely new browser session
-if (!sessionStorage.getItem("lastella_session")) {
-    // New session → Empty the cart
-    cart = [];
-    localStorage.removeItem("cart");
-    sessionStorage.setItem("lastella_session", "active");
-    saveCart();
-}
 // ==========================================
 // SAVE CART
 // ==========================================
 
 function saveCart() {
+
     localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart();
+
     updateCartCount();
+
+    renderCart();
+
 }
+
 // ==========================================
 // UPDATE CART COUNT
 // ==========================================
