@@ -358,21 +358,22 @@ shop.classList.toggle("pulse");
 
 /* Sticky Navigation */
 
-const nav = document.querySelector(".checkout-header");
+const nav=document.querySelector("nav");
 
-if (nav) {
+window.addEventListener("scroll",()=>{
 
-    window.addEventListener("scroll", () => {
+if(window.scrollY>120){
 
-        if (window.scrollY > 120) {
-            nav.classList.add("sticky");
-        } else {
-            nav.classList.remove("sticky");
-        }
+nav.classList.add("sticky");
 
-    });
+}else{
+
+nav.classList.remove("sticky");
 
 }
+
+});
+
 
 /* Smooth Scroll */
 
@@ -579,7 +580,6 @@ function addRingToCart(button,name,price){
 
 }
 
-
 async function sendWhatsAppOrder(
     firstName,
     lastName,
@@ -588,8 +588,6 @@ async function sendWhatsAppOrder(
     address,
     notes
 ){
-
-    const email = "";   // Add this line
 
     let payment = document.querySelector(
         'input[name="payment"]:checked'
@@ -644,6 +642,7 @@ try {
         firstName,
         lastName,
         phone,
+        email,
         city,
         address,
         notes,
