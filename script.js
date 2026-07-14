@@ -4,9 +4,7 @@
 // ==========================================
 
 // Load cart from browser storage
-// Always start with an empty cart
-localStorage.removeItem("cart");
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // ==========================================
 // SAVE CART
