@@ -479,16 +479,15 @@ function placeOrder() {
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
     const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
     const city = document.getElementById("city").value.trim();
     const address = document.getElementById("address").value.trim();
     const notes = document.getElementById("notes").value.trim();
-
+     
+    const email = "";
     if (
         firstName === "" ||
         lastName === "" ||
         phone === "" ||
-        email === "" ||
         city === "" ||
         address === ""
     ) {
@@ -581,15 +580,17 @@ function addRingToCart(button,name,price){
 
 }
 
+
 async function sendWhatsAppOrder(
     firstName,
     lastName,
     phone,
-    email,
     city,
     address,
     notes
 ){
+
+    const email = "";   // Add this line
 
     let payment = document.querySelector(
         'input[name="payment"]:checked'
@@ -613,7 +614,6 @@ async function sendWhatsAppOrder(
 
     message += `👤 Name: ${firstName} ${lastName}\n`;
     message += `📞 Phone: ${phone}\n`;
-    message += `📧 Email: ${email}\n`;
     message += `📍 City: ${city}\n`;
     message += `🏠 Address: ${address}\n`;
     message += `💳 Payment: ${payment}\n`;
