@@ -358,22 +358,21 @@ shop.classList.toggle("pulse");
 
 /* Sticky Navigation */
 
-const nav=document.querySelector("nav");
+const nav = document.querySelector(".checkout-header");
 
-window.addEventListener("scroll",()=>{
+if (nav) {
 
-if(window.scrollY>120){
+    window.addEventListener("scroll", () => {
 
-nav.classList.add("sticky");
+        if (window.scrollY > 120) {
+            nav.classList.add("sticky");
+        } else {
+            nav.classList.remove("sticky");
+        }
 
-}else{
-
-nav.classList.remove("sticky");
+    });
 
 }
-
-});
-
 
 /* Smooth Scroll */
 
