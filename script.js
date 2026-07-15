@@ -581,6 +581,28 @@ function addRingToCart(button,name,price){
 
 }
 
+function addbraceletToCart(button,name,price){
+
+    const card = button.closest(".card");
+
+    const image = card.querySelector("img").src;
+
+    const sizeBox = card.querySelector(".size-selector");
+
+    const size = sizeBox.dataset.size;
+
+    if(!size){
+
+        alert("Please select a bracelet size.");
+
+        return;
+
+    }
+
+    addToCart(name,price,image,size);
+
+}
+
 async function sendWhatsAppOrder(
     firstName,
     lastName,
