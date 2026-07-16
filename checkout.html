@@ -115,26 +115,36 @@ R.O 0.000
 
 </div>
 
-<div class="summary-row">
+<div class="summary-row shipping-method">
 
-<span>Shipping</span>
+    <span><strong>Shipping</strong></span>
 
-<select
-id="shippingType"
-onchange="updateShipping()">
+    <div class="shipping-options">
 
-<option value="2">
-Home Delivery (R.O 2.000)
-</option>
+        <label>
+            <input
+                type="radio"
+                name="shippingType"
+                value="2"
+                onchange="updateShipping()"
+                required>
 
-<option value="1">
-Office Delivery (R.O 1.000)
-</option>
+            Home Delivery (R.O 2.000)
+        </label>
 
-</select>
+        <label>
+            <input
+                type="radio"
+                name="shippingType"
+                value="1"
+                onchange="updateShipping()">
+
+            Office Delivery (R.O 1.000)
+        </label>
+
+    </div>
 
 </div>
-
 <div class="summary-row total">
 
 <strong>Total</strong>

@@ -492,17 +492,23 @@ function placeOrder() {
         city === "" ||
         address === ""
     ) {
-
         alert("Please fill all required fields.");
         return;
-
     }
 
     if (cart.length === 0) {
-
         alert("Your cart is empty.");
         return;
+    }
 
+    // Shipping method validation
+    const selectedShipping = document.querySelector(
+        'input[name="shippingType"]:checked'
+    );
+
+    if (!selectedShipping) {
+        alert("Please select a shipping method.");
+        return;
     }
 
     sendWhatsAppOrder(
@@ -619,13 +625,22 @@ async function sendWhatsAppOrder(
 
     payment = payment ? payment.value : "Cash on Delivery";
 
-    // Shipping
-    const shippingSelect = document.getElementById("shippingType");
+// Shipping
+const selectedShipping = document.querySelector(
+    'input[name="shippingType"]:checked'
+);
 
-    const shippingType = shippingSelect.options[shippingSelect.selectedIndex].text;
+if (!selectedShipping) {
+    alert("Please select a shipping method.");
+    return;
+}
 
-    const shippingCost = Number(shippingSelect.value);
+const shippingCost = Number(selectedShipping.value);
 
+const shippingType =
+    shippingCost === 2
+        ? "Home Delivery"
+        : "Office Delivery";
     let subtotal = 0;
 
     let message =
@@ -815,24 +830,31 @@ if(modal && modalImg && closeBtn){
 // UPDATE SHIPPING
 // ==========================================
 
-function updateShipping(){
+function updateShipping() {
 
-    const shipping = Number(
-        document.getElementById("shippingType").value
+    const selected = document.querySelector(
+        'input[name="shippingType"]:checked'
     );
 
     let subtotal = 0;
 
-    cart.forEach(item=>{
-
+    cart.forEach(item => {
         subtotal += item.price * item.quantity;
-
     });
-
-    const total = subtotal + shipping;
 
     document.getElementById("checkoutSubtotal").innerHTML =
         "R.O " + subtotal.toFixed(3);
+
+    // No shipping selected yet
+    if (!selected) {
+        document.getElementById("checkoutTotal").innerHTML =
+            "R.O " + subtotal.toFixed(3);
+        return;
+    }
+
+    const shipping = Number(selected.value);
+
+    const total = subtotal + shipping;
 
     document.getElementById("checkoutTotal").innerHTML =
         "R.O " + total.toFixed(3);
