@@ -720,6 +720,35 @@ message += `\nSubtotal: R.O ${subtotal.toFixed(3)}\n`;
     },1000);
 
 }
+const brandButtons = document.querySelectorAll(".brand-btn");
+const products = document.querySelectorAll(".card");
+
+brandButtons.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        brandButtons.forEach(btn=>btn.classList.remove("active"));
+        this.classList.add("active");
+
+        const brand=this.dataset.brand;
+
+        products.forEach(product=>{
+
+            if(brand==="all" || product.dataset.brand===brand){
+
+                product.style.display="block";
+
+            }else{
+
+                product.style.display="none";
+
+            }
+
+        });
+
+    });
+
+});
 // ==========================================
 // SHOW / HIDE BANK DETAILS
 // ==========================================
