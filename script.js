@@ -4,7 +4,7 @@
 // ==========================================
 
 // Load cart from browser storage
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
 // ==========================================
 // SAVE CART
@@ -12,7 +12,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function saveCart() {
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    sessionStorage.setItem("cart", JSON.stringify(cart));
 
     updateCartCount();
 
@@ -725,7 +725,7 @@ message += `\nSubtotal: R.O ${subtotal.toFixed(3)}\n`;
     // Clear cart
     cart = [];
 
-    localStorage.removeItem("cart");
+    sessionStorage.removeItem("cart");
 
     saveCart();
 
