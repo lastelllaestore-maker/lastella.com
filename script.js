@@ -358,22 +358,19 @@ shop.classList.toggle("pulse");
 
 /* Sticky Navigation */
 
-const nav=document.querySelector("nav");
+const nav = document.querySelector("nav");
 
-window.addEventListener("scroll",()=>{
+if (nav) {
+    window.addEventListener("scroll", () => {
 
-if(window.scrollY>120){
+        if (window.scrollY > 120) {
+            nav.classList.add("sticky");
+        } else {
+            nav.classList.remove("sticky");
+        }
 
-nav.classList.add("sticky");
-
-}else{
-
-nav.classList.remove("sticky");
-
+    });
 }
-
-});
-
 
 /* Smooth Scroll */
 
@@ -463,12 +460,16 @@ function loadCheckout() {
 
  subtotal.innerHTML = "R.O " + grandTotal.toFixed(3);
 
-const shipping = Number(
-    document.getElementById("shippingType").value
+const selectedShipping = document.querySelector(
+    'input[name="shippingType"]:checked'
 );
 
+const shipping = selectedShipping
+    ? Number(selectedShipping.value)
+    : 0;
+
 total.innerHTML =
-"R.O " + (grandTotal + shipping).toFixed(3);
+    "R.O " + (grandTotal + shipping).toFixed(3);
 }
 // ==========================================
 // PLACE ORDER
